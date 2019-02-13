@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 
     if (process < 0) 
     { // Fork failed; print error; exit program
-        printf(stderr, "fork failed\n");
+        fprintf(stderr, "fork failed\n");
         exit(1);
     } 
     else if (process == 0) 
