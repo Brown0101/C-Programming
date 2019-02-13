@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
     { // Parent goes down this path (main)
         int process_wait = wait(NULL);
         printf("-------------------------------\n");
-        printf("Hello, I am parent of %d (process_wait:%d) (pid:%d)\n\n",
+        printf("Hello, I am parent of %d (process_wait:%d) (pid:%d)\n",
         process, process_wait, (int) getpid());        
         printf("My initial value is: %d\n", value);
         value = 300;
