@@ -12,6 +12,7 @@
 int main(int argc, char *argv[]) 
 {
     // Display the initial process created for the program
+    printf("-------------------------------\n");
     printf("Initial Process PID: (pid:%d)\n", (int) getpid());
 
     // To test virtualization for processes using resources we use
@@ -26,22 +27,21 @@ int main(int argc, char *argv[])
     } 
     else if (process == 0) 
     { // Run our child (new process)
-        printf("-------------------------------\n\n");        
-        printf("Hello, I am child (pid:%d)\n\n", (int) getpid());        
+        printf("-------------------------------\n");        
+        printf("Hello, I am child (pid:%d)\n", (int) getpid());        
         printf("My initial value is: %d\n", value);
         value = 200;
-        printf("My new value contains: %d\n\n", value);
-        printf("-------------------------------\n\n");
+        printf("My new value contains: %d\n", value);
     } 
     else 
     { // Parent goes down this path (main)
         int process_wait = wait(NULL);
-        printf("-------------------------------\n\n");
+        printf("-------------------------------\n");
         printf("Hello, I am parent of %d (process_wait:%d) (pid:%d)\n\n",
         process, process_wait, (int) getpid());        
         printf("My initial value is: %d\n", value);
         value = 300;
-        printf("My new value contains: %d\n\n", value);
+        printf("My new value contains: %d\n", value);
         printf("-------------------------------\n");
     }
 
