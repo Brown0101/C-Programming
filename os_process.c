@@ -4,8 +4,8 @@
 #include <sys/wait.h>
 
 /**
- * Demonstrating OS virtualization for applications on using 
- * the OS's system rescources. 
+ * Demonstrating OS virtualization for applications 
+ * on using the OS's system rescources. 
 **/
 
 // Program Start
@@ -26,23 +26,23 @@ int main(int argc, char *argv[])
     } 
     else if (process == 0) 
     { // Run our child (new process)
-        printf("-------------------------------\n");        
-        printf("hello, I am child (pid:%d)\n", (int) getpid());
-        printf("-------------------------------\n");
+        printf("-------------------------------\n\n");        
+        printf("Hello, I am child (pid:%d)\n\n", (int) getpid());        
         printf("My initial value is: %d\n", value);
         value = 200;
-        printf("New new value contains: %d\n", value);
+        printf("My new value contains: %d\n\n", value);
+        printf("-------------------------------\n\n");
     } 
     else 
     { // Parent goes down this path (main)
         int process_wait = wait(NULL);
-        printf("-------------------------------\n");
-        printf("hello, I am parent of %d (process_wait:%d) (pid:%d)\n",
-        process, process_wait, (int) getpid());
-        printf("-------------------------------\n");
+        printf("-------------------------------\n\n");
+        printf("Hello, I am parent of %d (process_wait:%d) (pid:%d)\n\n",
+        process, process_wait, (int) getpid());        
         printf("My initial value is: %d\n", value);
         value = 300;
-        printf("New new value contains: %d\n", value);
+        printf("My new value contains: %d\n\n", value);
+        printf("-------------------------------\n");
     }
 
     return 0;
